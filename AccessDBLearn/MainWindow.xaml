@@ -1,0 +1,22 @@
+﻿<Window x:Class="AccessDBLearn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccessDBLearn"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="544.118" Width="760.294" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:Baza_Dannykh2DataSet x:Key="baza_Dannykh2DataSet"/>
+        <CollectionViewSource x:Key="абонементViewSource" Source="{Binding Абонемент, Source={StaticResource baza_Dannykh2DataSet}}"/>
+        <CollectionViewSource x:Key="данные_спортклубаViewSource" Source="{Binding Данные_спортклуба, Source={StaticResource baza_Dannykh2DataSet}}"/>
+        <CollectionViewSource x:Key="список_спортклубовViewSource" Source="{Binding Список_спортклубов, Source={StaticResource baza_Dannykh2DataSet}}"/>
+        <CollectionViewSource x:Key="тренерский_составViewSource" Source="{Binding Тренерский_состав, Source={StaticResource baza_Dannykh2DataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource абонементViewSource}">
+        <DataGrid x:Name="dataGrid" Height="179" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Выбор таблицы:" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="99"/>
+        <ComboBox x:Name="tablesListBox" HorizontalAlignment="Left" Margin="114,194,0,0" VerticalAlignment="Top" Width="229" Height="26" SelectionChanged="comboBox_SelectionChanged"/>
+
+    </Grid>
+</Window>
