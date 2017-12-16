@@ -82,5 +82,31 @@ namespace AccessDBLearn
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void firstRowButton_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.SelectedIndex = 0;
+        }
+
+        private void lastRowButton_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.SelectedIndex = dataGrid.Items.Count - 2;
+        }
+
+        private void customRowButton_Click(object sender, RoutedEventArgs e)
+        {
+            int selectItemModifer = Convert.ToInt32(selectItemModifierTextBox.Text);
+            int tableRowCount = dataGrid.Items.Count - 2;
+            int nextSelectItem = 0;
+
+            if ((dataGrid.SelectedIndex + selectItemModifer) < 0)
+                nextSelectItem = 0;
+            else if ((dataGrid.SelectedIndex + selectItemModifer) > tableRowCount)
+                nextSelectItem = tableRowCount;
+            else
+                nextSelectItem = dataGrid.SelectedIndex + selectItemModifer;
+
+            dataGrid.SelectedIndex = nextSelectItem;
+        }
     }
 }
