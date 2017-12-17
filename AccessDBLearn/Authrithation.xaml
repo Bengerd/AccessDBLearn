@@ -1,0 +1,25 @@
+﻿<Window x:Class="AccessDBLearn.Authrithation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccessDBLearn"
+        mc:Ignorable="d"
+        Title="Authrithation" Height="271" Width="248" MinWidth="248" MinHeight="271">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="Выберите пользователя" Height="70" Margin="10,10,10,0" VerticalAlignment="Top">
+            <Grid>
+                <RadioButton x:Name="adminRadioButton" Content="Администратор" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="userRadioButton" Content="Пользователь" HorizontalAlignment="Left" Margin="10,30,0,0" Height="18" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Введите пароль" Margin="10,85,10,0" Height="145" VerticalAlignment="Top">
+            <Grid>
+                <TextBox x:Name="passwordTextBox" Height="23" Margin="10,10,10,0" TextWrapping="Wrap" Text="password" VerticalAlignment="Top"/>
+                <Button x:Name="enterButton" Content="Войти" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" Width="94" Height="38" Click="enterButton_Click"/>
+                <Button x:Name="exitButton" Content="Выйти" HorizontalAlignment="Center" Margin="51,81,51,0" VerticalAlignment="Top" Width="94" Height="38" Click="exitButton_Click"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
