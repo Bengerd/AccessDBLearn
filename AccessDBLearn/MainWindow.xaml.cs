@@ -125,5 +125,16 @@ namespace AccessDBLearn
         {
 
         }
+
+        private void exitButton1_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void sqlButton_Click(object sender, RoutedEventArgs e)
+        {
+            QueryEditor queryEditor = new QueryEditor();
+            queryEditor.Show();
+        }
     }
 }

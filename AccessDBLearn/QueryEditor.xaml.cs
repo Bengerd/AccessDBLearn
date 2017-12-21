@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.OleDb;
+using System.Data;
+
 
 namespace AccessDBLearn
 {
@@ -19,9 +22,45 @@ namespace AccessDBLearn
     /// </summary>
     public partial class QueryEditor : Window
     {
+        string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Baza_Dannykh2.mdb;Persist Security Info = False;";
         public QueryEditor()
         {
             InitializeComponent();
+        }
+
+        private void executeButton_Click(object sender, RoutedEventArgs e)
+        {
+            string query = queryTextBox.Text;
+
+            try
+            {
+                OleDbConnection connection = new OleDbConnection(connectionString);
+
+                using (OleDbCommand com = new OleDbCommand(queryTextBox.Text, connection))
+                {
+                    connection.Open();
+
+                    OleDbDataReader reader = com.ExecuteReader();
+
+                    DataTable table = new DataTable();
+                    table.Load(reader);
+                    dataGrid.ItemsSource = table.DefaultView;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void clearButton_Click(object sender, RoutedEventArgs e)
+        {
+            queryTextBox.Clear();
         }
     }
 }
