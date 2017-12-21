@@ -9,8 +9,8 @@
     <Grid>
         <GroupBox x:Name="groupBox" Header="Выберите пользователя" Height="70" Margin="10,10,10,0" VerticalAlignment="Top">
             <Grid>
-                <RadioButton x:Name="adminRadioButton" Content="Администратор" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True"/>
-                <RadioButton x:Name="userRadioButton" Content="Пользователь" HorizontalAlignment="Left" Margin="10,30,0,0" Height="18" VerticalAlignment="Top"/>
+                <RadioButton x:Name="adminRadioButton" Content="Администратор" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" IsChecked="True" Checked="adminRadioButton_Checked"/>
+                <RadioButton x:Name="userRadioButton" Content="Пользователь" HorizontalAlignment="Left" Margin="10,30,0,0" Height="18" VerticalAlignment="Top" Checked="userRadioButton_Checked"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox1" Header="Введите пароль" Margin="10,85,10,0" Height="145" VerticalAlignment="Top">

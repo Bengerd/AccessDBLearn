@@ -57,6 +57,12 @@
     <Compile Include="Authrithation.xaml.cs">
       <DependentUpon>Authrithation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="QueryEditor.xaml.cs">
+      <DependentUpon>QueryEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubscriptionsAdd.xaml.cs">
+      <DependentUpon>SubscriptionsAdd.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +84,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Authrithation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QueryEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubscriptionsAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

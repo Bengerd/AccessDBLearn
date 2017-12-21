@@ -51,5 +51,17 @@ namespace AccessDBLearn
         {
             Application.Current.Shutdown();
         }
+
+        private void userRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (adminRadioButton != null)
+                adminRadioButton.IsChecked = false;
+        }
+
+        private void adminRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (userRadioButton != null)
+                userRadioButton.IsChecked = false;
+        }
     }
 }

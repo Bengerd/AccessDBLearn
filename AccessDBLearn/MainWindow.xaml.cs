@@ -34,7 +34,19 @@ namespace AccessDBLearn
         {
             string viewSource = tablesListBox.SelectedValue.ToString();
 
-            dataGrid.ItemsSource = dbViewsCollection[viewSource].View;
+            try
+            {
+                dataGrid.ItemsSource = dbViewsCollection[viewSource].View;
+
+                //for(int i = 0; i < dataGrid.hea; i++)
+                //{ 
+                //    FieldsComboBox.Items.Add(dataGrid.Columns[i].HeaderStringFormat);
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -107,6 +119,11 @@ namespace AccessDBLearn
                 nextSelectItem = dataGrid.SelectedIndex + selectItemModifer;
 
             dataGrid.SelectedIndex = nextSelectItem;
+        }
+
+        private void FieldsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
