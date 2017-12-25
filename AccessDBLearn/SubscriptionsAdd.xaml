@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccessDBLearn"
         mc:Ignorable="d"
-        Title="SubscriptionsAdd" Height="262" Width="294" MinWidth="294" MinHeight="262">
+        Title="SubscriptionsAdd" Height="262" Width="294" MinWidth="294" MinHeight="262" Loaded="Window_Loaded">
     <Grid>
         <Label x:Name="label" Content="Код абонемента:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="117"/>
         <Label x:Name="label1" Content="Фамилия клиента:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
@@ -13,14 +13,14 @@
         <Label x:Name="label3" Content="Рост клиента:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label4" Content="Вес клиента:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Тренер:" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="acceptButton" Content="Ок" HorizontalAlignment="Left" Margin="44,201,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,0.5"/>
-        <Button x:Name="cancelButton" Content="Отмена" HorizontalAlignment="Left" Margin="152,201,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBox x:Name="codeTextBox" HorizontalAlignment="Left" Height="22" Margin="152,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="acceptButton" Content="Ок" HorizontalAlignment="Left" Margin="44,201,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5" Click="acceptButton_Click"/>
+        <Button x:Name="cancelButton" Content="Отмена" HorizontalAlignment="Left" Margin="152,201,0,0" VerticalAlignment="Top" Width="75" Click="cancelButton_Click"/>
+        <TextBox x:Name="codeTextBox" HorizontalAlignment="Left" Height="22" Margin="152,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsReadOnlyCaretVisible="True" IsInactiveSelectionHighlightEnabled="True" IsEnabled="False"/>
         <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left" Height="22" Margin="152,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="ageTextBox" HorizontalAlignment="Left" Height="22" Margin="152,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="heightTextBox" HorizontalAlignment="Left" Height="22" Margin="152,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="weightTextBox" HorizontalAlignment="Left" Height="22" Margin="152,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="trainerComboBox" HorizontalAlignment="Left" Margin="152,169,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="trainerTextBox" HorizontalAlignment="Left" Height="22" Margin="152,169,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
